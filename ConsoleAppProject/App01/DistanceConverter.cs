@@ -10,11 +10,15 @@ namespace ConsoleAppProject.App01
     /// </author>
     public class DistanceConverter
     {
+        // Distance measured in miles
         private double miles;
-
+        // Distance measured in feet
         private double feet;
+
         /// <summary>
-        /// Enable the program file to run the distance converter.run
+        /// This method will input the distance measured in miles
+        /// calculate the same distance in feeet, and output the 
+        /// distance in feet.
         /// </summary>
         public void Run()
         {
@@ -36,12 +40,10 @@ namespace ConsoleAppProject.App01
 
         private void CalculateFeet()
         {
-
         }
 
         private void OutputFeet()
         {
-
         }
 
     }
