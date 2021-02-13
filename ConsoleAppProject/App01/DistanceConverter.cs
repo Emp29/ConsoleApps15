@@ -3,7 +3,9 @@
 namespace ConsoleAppProject.App01
 {
     /// <summary>
-    /// Need to put a description in here
+    /// This class contains methods for converting
+    /// different measurements of miles feet and metres
+    /// between each other - 6 combination in all.
     /// </summary>
     /// <author>
     /// Andrew Wood 23/01/2021
