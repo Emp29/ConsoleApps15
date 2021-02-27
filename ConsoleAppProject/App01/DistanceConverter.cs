@@ -10,7 +10,7 @@ namespace ConsoleAppProject.App01
     /// <author>
     /// Andrew Wood 23/01/2021
     /// </author>
-    
+    /// Version 1.0
     public class DistanceConverter
     {
         public const int FEET_IN_MILES = 5280;
@@ -32,9 +32,12 @@ namespace ConsoleAppProject.App01
         public void MilesToFeet()
         {
             OutputHeading("Converting Miles to Feet");
+
             miles = InputDistance("please enter the number of miles > ");
+
             CalculateFeet();
-            OutputFeet();
+
+            OutputDistance(miles, nameof(miles), feet, nameof(feet));
         }
 
         public void FeetToMiles()
@@ -42,7 +45,7 @@ namespace ConsoleAppProject.App01
             OutputHeading("Converting Feet to Miles");
             feet = InputDistance("please enter the number of feet > ");
             CalculateMiles();
-            OutputMiles();
+            OutputDistance(feet, nameof(feet), miles, nameof(miles));
         }
 
         public void MilesToMeters()
@@ -50,7 +53,7 @@ namespace ConsoleAppProject.App01
             OutputHeading("Converting Miles to Meteres");
             miles = InputDistance("please enter the number of miles > ");
             CalculateMeters();
-            OutputMeters();
+            OutputDistance(miles, nameof(miles), meters, nameof(meters));
         }
 
         private void OutputHeading(String prompt)
