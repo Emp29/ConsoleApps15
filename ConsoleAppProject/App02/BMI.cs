@@ -10,7 +10,7 @@ namespace ConsoleAppProject.App02
     /// <author>
     /// Andrew Wood 23/01/2021
     /// </author>
-    /// Version 1.2
+    /// Version 1.1
     public class BMI
     {
         //Constants for how many pounds in a stone
@@ -28,7 +28,7 @@ namespace ConsoleAppProject.App02
 
         //Imperial and Metric variables
         private double pound;
-        private int height;
+        private int inch;
         private double kilogram;
         private double metre;
         private double stones;
@@ -88,7 +88,7 @@ namespace ConsoleAppProject.App02
         }
         public void CalculateMetricBMI()
         {
-            BMIIndex = kilogram / (height * height);
+            BMIIndex = kilogram / (metre * metre);
         }
 
         public void CalculateImperialBMI()
