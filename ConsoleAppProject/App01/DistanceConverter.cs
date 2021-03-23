@@ -95,17 +95,17 @@ namespace ConsoleAppProject.App01
 
         private static string ExecuteChoice(string choice)
         {
-            if (choice.Equals("1"))
+            if (choice == ("1"))
             {
-                return  FEET;
+                return FEET;
             }
             else if (choice == "2")
             {
-                return  METRES;
+                return METRES;
             }
-            else if (choice.Equals("3"))
+            else if (choice == ("3"))
             {
-                return  MILES;
+                return MILES;
             }
             return null;
         }
@@ -120,6 +120,7 @@ namespace ConsoleAppProject.App01
 
             Console.Write(prompt);
             string choice = Console.ReadLine();
+
             return choice;
         }
 
