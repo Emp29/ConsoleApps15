@@ -89,7 +89,11 @@ namespace ConsoleAppProject.App01
             string choice = DisplayChoices(prompt);
 
             string unit = ExecuteChoice(choice);
-            Console.WriteLine($"\n You have selected {unit}");
+            if (unit == null)
+                {
+                Console.WriteLine("error");
+                } 
+            else Console.WriteLine($"\n You have selected {unit}");
             return unit;
         }
 

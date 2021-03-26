@@ -31,7 +31,7 @@ namespace ConsoleAppProject.App02
         private int inch;
         private double kilogram;
         private double metre;
-        private double stones;
+        private double stone;
 
         //BMI Index
         public double BMIIndex;
@@ -114,7 +114,7 @@ namespace ConsoleAppProject.App02
             Console.Write("Input your weight (stone and pounds) \n");
             double stone = InputNumber("Input weight in Stones > ");
             pound = InputNumber("Imput weight in pounds > ");
-            pound += stones * POUNDS_IN_STONES;
+            pound += stone * POUNDS_IN_STONES;
 
             Console.WriteLine("Input your height (feet and inches) \n");
             double feet = InputNumber("Input hight in Feet > ");
@@ -135,8 +135,8 @@ namespace ConsoleAppProject.App02
 
         private void OutputHealthMessage()
         {
-            Console.Write("Your BMI is > ");
-            Console.WriteLine(BMIIndex);
+            //Console.Write("Your BMI is > ");
+            //Console.WriteLine(BMIIndex);
 
             if (BMIIndex < UNDERWEIGHT)
             {
