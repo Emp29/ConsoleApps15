@@ -43,13 +43,13 @@ namespace ConsoleAppProject.App01
         /// </summary>
         public void ConvertDistance()
         {
-            OutputHeading();
+            ConsoleHelper.OutputHeading("Distance Converter");
 
             fromUnit = SelectUnit(" Please select the from distance unit > ");
             toUnit = SelectUnit(" Please select the to distance unit > ");
 
             Console.WriteLine($"\n Converting {fromUnit} to {toUnit}");
-            fromDistance = InputDistance($" please enter the number of {fromUnit} > ");
+            fromDistance = ConsoleHelper.InputNumber($" please enter the number of {fromUnit} > ");
 
             CalculateDistance();
 
@@ -86,12 +86,19 @@ namespace ConsoleAppProject.App01
 
         private string SelectUnit(string prompt)
         {
-            string choice = DisplayChoices(prompt);
+            string[] choices =
+            {
+                FEET,
+                METRES,
+                MILES
+            };
 
-            string unit = ExecuteChoice(choice);
+            int choiceNo = ConsoleHelper.SelectChoice(choices);
+
+            string unit = choices[choiceNo - 1]; 
             if (unit == null)
                 {
-                Console.WriteLine("error");
+                    Console.WriteLine("error");
                 } 
             else Console.WriteLine($"\n You have selected {unit}");
             return unit;
@@ -127,18 +134,6 @@ namespace ConsoleAppProject.App01
 
             return choice;
         }
-
-        /// <summary>
-        /// Prompt the user to enter the distance in miles
-        /// Input the miles as a double number
-        /// </summary>
-
-        private double InputDistance(string prompt)
-        {
-            Console.Write(prompt);
-            string value = Console.ReadLine();
-            return Convert.ToDouble(value);
-        }
         
         /// <summary>
         /// 
@@ -149,15 +144,7 @@ namespace ConsoleAppProject.App01
                 $" is {toDistance} {toUnit}!\n");
         }
 
-        private void OutputHeading()
-        {
-            Console.WriteLine();
-            Console.WriteLine("\n-----------------------------");
-            Console.WriteLine("        Distance Converter    ");
-            Console.WriteLine("         by Andrew Wood       ");
-            Console.WriteLine("-----------------------------\n");
-            Console.WriteLine();
-        }
+      
 
     }
 }

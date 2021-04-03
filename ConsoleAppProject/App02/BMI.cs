@@ -44,11 +44,7 @@ namespace ConsoleAppProject.App02
         /// <summery>
         public void CalculateIndex()
         {
-            //Simple heading for application
-            Console.WriteLine("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=");
-            Console.WriteLine("Body Mass Index Calculator");
-            Console.WriteLine("     by Andrew Wood");
-            Console.WriteLine("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=");
+            ConsoleHelper.OutputHeading("Body Mass Index Calculator");
 
             //Select units method called to make the unit choice
             UnitSystems unitSystem = SelectUnits();
