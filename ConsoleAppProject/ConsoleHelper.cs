@@ -44,10 +44,57 @@ namespace ConsoleAppProject
 
             return number;
         }
+        public static double InputNumber(string prompt)
+        {
+            double number = 0;
+            bool isValid = false;
 
+            do
+            {
+                Console.Write(prompt);
+                string value = Console.ReadLine();
+
+                try
+                {
+                    number = Convert.ToDouble(value);
+                    isValid = true;
+                }
+                catch (Exception)
+                {
+                    isValid = false;
+                    Console.WriteLine(" INVALID NUMBER ENTERED!");
+                }
+            } while (!isValid);
+
+            return number;
+        }
 
         /// <summary>
         /// 
+        /// </summary>
+        public static double InputNumber(string prompt, double min, double max)
+        {
+            bool isValid = false;
+            double number = 0;
+            
+            do
+            {
+                number = InputNumber(prompt);
+                if (number < min || number > max)
+                {
+                    isValid = false;
+                    Console.WriteLine($"Number must be between {min} and {max}");
+                }
+                else isValid = true;
+
+            } while (!isValid);
+
+            return number;
+        }
+
+        /// <summary>
+        /// Out put a discription of the application to the user. 
+        /// To inform of what app has bein selected. 
         /// </summary>
         public static void OutputHeading(string title)
         {
