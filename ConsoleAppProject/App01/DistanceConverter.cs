@@ -45,7 +45,7 @@ namespace ConsoleAppProject.App01
         {
             ConsoleHelper.OutputHeading("Distance Converter");
 
-            fromUnit = SelectUnit(" Please select the from distance unit > ");
+            fromUnit = SelectUnit("Please select the from distance unit > ");
             toUnit = SelectUnit(" Please select the to distance unit > ");
 
             Console.WriteLine($"\n Converting {fromUnit} to {toUnit}");
@@ -86,13 +86,13 @@ namespace ConsoleAppProject.App01
 
         private string SelectUnit(string prompt)
         {
-            string[] choices =
+            string [] choices =
             {
                 FEET,
                 METRES,
                 MILES
             };
-
+            Console.WriteLine(prompt);
             int choiceNo = ConsoleHelper.SelectChoice(choices);
 
             string unit = choices[choiceNo - 1]; 
@@ -103,37 +103,6 @@ namespace ConsoleAppProject.App01
             else Console.WriteLine($"\n You have selected {unit}");
             return unit;
         }
-
-        private static string ExecuteChoice(string choice)
-        {
-            if (choice == ("1"))
-            {
-                return FEET;
-            }
-            else if (choice == "2")
-            {
-                return METRES;
-            }
-            else if (choice == ("3"))
-            {
-                return MILES;
-            }
-            return null;
-        }
-
-        private static string DisplayChoices(string prompt)
-        {
-            Console.WriteLine();
-            Console.WriteLine($" 1. {FEET}");
-            Console.WriteLine($" 2. {METRES}");
-            Console.WriteLine($" 3. {MILES}");
-            Console.WriteLine();
-
-            Console.Write(prompt);
-            string choice = Console.ReadLine();
-
-            return choice;
-        }
         
         /// <summary>
         /// 
@@ -143,8 +112,5 @@ namespace ConsoleAppProject.App01
             Console.WriteLine($"\n {fromDistance}  {fromUnit}" + 
                 $" is {toDistance} {toUnit}!\n");
         }
-
-      
-
     }
 }
