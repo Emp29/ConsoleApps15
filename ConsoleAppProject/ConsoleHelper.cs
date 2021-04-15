@@ -35,15 +35,6 @@ namespace ConsoleAppProject
             }
         }
 
-
-        public static double InputNumber(string prompt)
-        {
-            Console.Write(prompt);
-            string value = Console.ReadLine();
-            double number = Convert.ToDouble(value);
-
-            return number;
-        }
         public static double InputNumber(string prompt)
         {
             double number = 0;

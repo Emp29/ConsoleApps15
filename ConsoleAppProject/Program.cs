@@ -28,9 +28,6 @@ namespace ConsoleAppProject
             string[] choices = { "Distance Converter", "BMI Calculator" };
             int choiceNo = ConsoleHelper.SelectChoice(choices);
 
-            Console.WriteLine(" Please enter your choice > ");
-            string option = Console.ReadLine();
-
             if (choiceNo == 1)
             {
                 converter.ConvertDistance();
