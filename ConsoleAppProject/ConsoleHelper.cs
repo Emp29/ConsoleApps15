@@ -18,7 +18,8 @@ namespace ConsoleAppProject
 
             // Get the user's choice
 
-            int choiceNo = (int)InputNumber("\n Please enter your choice > ");
+            int choiceNo = (int)InputNumber("\n Please enter your choice > ",
+                                            1, choices.Length);
             return choiceNo;
         }
         /// <summary>
