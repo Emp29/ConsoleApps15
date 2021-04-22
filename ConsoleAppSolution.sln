@@ -12,7 +12,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApps", "WebApps\WebApps.csproj", "{8324E9C4-49E7-4D17-A006-CDBDC32CE37A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp.tests", "ConsoleApp.tests\ConsoleApp.tests.csproj", "{90E70B54-069C-44C0-AA19-787D9D378A0D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleApp.tests", "ConsoleApp.tests\ConsoleApp.tests.csproj", "{90E70B54-069C-44C0-AA19-787D9D378A0D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

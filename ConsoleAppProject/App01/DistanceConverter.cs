@@ -25,11 +25,11 @@ namespace ConsoleAppProject.App01
 
         // Distance measured
         public double FromDistance { get; set; }
-        private double ToDistance { get; set; }
+        public double ToDistance { get; set; }
 
         //Private atributes
-        private string FromUnit { get; set; }
-        private string ToUnit { get; set; }
+        public string FromUnit { get; set; }
+        public string ToUnit { get; set; }
 
         public DistanceConverter()
         {
@@ -56,7 +56,7 @@ namespace ConsoleAppProject.App01
             OutputDistance();
         }
 
-        private void CalculateDistance()
+        public void CalculateDistance()
         {
             if (FromUnit == MILES && ToUnit == FEET)
             {
