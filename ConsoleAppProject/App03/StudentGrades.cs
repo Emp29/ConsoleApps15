@@ -9,11 +9,21 @@ namespace ConsoleAppProject.App03
     /// </summary>
     public class StudentGrades
     {
+        //Constants (Grade Bounderies)
+
+        public const int LowestMark = 0;
+        public const int LowestGradeD = 40;
+        public const int LowestGradeC = 50;
+        public const int LowestGradeB = 60;
+        public const int LowestGradeA = 70;
+        public const int HighestMark = 100;
+
+        //Properties
             public string [] Students { get; set; }
 
             public int[] Marks { get; set; }
 
-            public int GradeProfile { get; set; }
+            public int[] GradeProfile { get; set; }
 
             public double Mean { get; set; }
 
@@ -21,18 +31,24 @@ namespace ConsoleAppProject.App03
 
             public int Maximum { get; set; }
 
+            public Grades Grades
+            {
+                get => default; 
+                set {}
+            }
+
             public StudentGrades()
             {
-            Students = new string[]
-                    {
+                Students = new string[]
+                {
                 "Aaron", "Mardell", "Eleonor",
                 "Glynis", "Fritz", "Manuela",
                 "Laurence", "Tomasa", "Latosha",
                 "Dalton"
-                    };
+                };
 
-            GradeProfile = new int[(int)Grades.A + 1];
-            Marks = new int[Students.Length];
+                GradeProfile = new int[(int)Grades.A + 1];
+                Marks = new int[Students.Length];
             }
 
             /// <summary>
@@ -40,7 +56,7 @@ namespace ConsoleAppProject.App03
             /// </summary>
             public void InputMarks()
             {
-                throw new NotImplementedException();
+                throw new NotImplementedException();// method to say that the exception dosent exist yet
             }
 
             /// <summary>
@@ -56,7 +72,11 @@ namespace ConsoleAppProject.App03
             /// </summary>
             public Grades ConvertToGrade(int mark)
             {
-                throw new NotImplementedException();
+                if (mark >=0 && mark < LowestGradeD)
+                {
+                    return Grades.F;
+                }
+                else return Grades.D;
             }
             /// <summary>
             /// 
