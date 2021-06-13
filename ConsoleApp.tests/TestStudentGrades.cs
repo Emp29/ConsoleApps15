@@ -9,16 +9,13 @@ namespace ConsoleApp.tests
     [TestClass]
     public class TestStudentGrades
     {
-        private readonly StudentGrades converter = new StudentGrades();
-        private int[] testMarks;
-
-        public TestStudentGrades()
-        {
-            testMarks = new int[]
+        private readonly StudentGrades
+            studentGrades = new StudentGrades();
+       
+           private readonly int[] StatsMarks = new int[]
             {
                 10, 20, 30, 40, 50, 60, 70, 80, 90, 100
             };
-        }
         
         /// <summary>
         /// Explain briefly the purpose of this specific test
@@ -32,7 +29,7 @@ namespace ConsoleApp.tests
 
             //Act
 
-            Grades actualGrade = converter.ConvertToGrade(0);
+            Grades actualGrade = studentGrades.ConvertToGrade(0);
 
             //Assert
 
@@ -48,7 +45,7 @@ namespace ConsoleApp.tests
 
             //Act
 
-            Grades actualGrade = converter.ConvertToGrade(39);
+            Grades actualGrade = studentGrades.ConvertToGrade(39);
 
             //Assert
 
@@ -60,17 +57,17 @@ namespace ConsoleApp.tests
         {
             //Arange
 
-            converter.Marks = testMarks;
+            studentGrades.Marks = StatsMarks;
 
             double expectedMean = 55.0;
 
             //Act
 
-            converter.CalculateStats();
+            studentGrades.CalculateStats();
             
             //Assert
 
-            Assert.AreEqual(expectedMean, converter.Mean);
+            Assert.AreEqual(expectedMean, studentGrades.Mean);
         }
 
         [TestMethod]
@@ -86,6 +83,24 @@ namespace ConsoleApp.tests
             //Assert
             Assert.AreEqual(expectedMin, studentGrades.Minimum);
         }
-decimal c
+        [TestMethod]
+        public void TestGradeProfile()
+        {
+            //Arange
+            studentGrades.Marks = StatsMarks;
+            bool expectedProfile = false;
+
+            //Act
+            studentGrades.CalculateGradeProfile();
+
+            expectedProfile = ((studentGrades.GradeProfile[0] == 3) &&
+                               (studentGrades.GradeProfile[1] == 1) &&
+                               (studentGrades.GradeProfile[2] == 1) &&
+                               (studentGrades.GradeProfile[3] == 1) &&
+                               (studentGrades.GradeProfile[4] == 4));
+
+            //Assert
+            Assert.IsTrue(expectedProfile);
+        }
     }
 }

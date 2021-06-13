@@ -77,7 +77,22 @@ namespace ConsoleAppProject.App03
             {
                 return Grades.F;
             }
-            else return Grades.D;
+
+            if (mark >= LowestGradeD && mark < LowestGradeC)
+            {
+                return Grades.D;
+            }
+            
+            if (mark >= LowestGradeC && mark < LowestGradeB)
+                {
+                    return Grades.C;
+                }
+
+            if (mark >= LowestGradeB && mark < LowestGradeA)
+            {
+                return Grades.B;
+            }
+            else return Grades.A;
         }
 
         /// <summary>
@@ -85,10 +100,15 @@ namespace ConsoleAppProject.App03
         /// </summary>
         public void CalculateStats()
         {
+            Minimum = Marks[0];
+            Maximum = Marks[0];
+
             double total = 0;
 
             foreach (int mark in Marks)
             {
+                if (mark > Maximum) Maximum = mark; 
+                if (mark < Minimum) Maximum = mark;
                 total += mark;
             }
 
@@ -100,7 +120,17 @@ namespace ConsoleAppProject.App03
             /// </summary>
             public void CalculateGradeProfile()
             {
-                throw new NotImplementedException();
+               for (int i  = 0; i < GradeProfile.Length; i++)
+                {
+                    GradeProfile[i] = 0;
+                }
+
+               foreach (int mark in Marks)
+                {
+                    Grades grade = ConvertToGrade(mark);
+                    GradeProfile[(int)grade]++;
+                }
+
             }
         }
 
