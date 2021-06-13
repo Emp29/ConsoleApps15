@@ -52,7 +52,7 @@ namespace ConsoleAppProject.App03
         }
 
         /// <summary>
-        /// 
+        /// This is a method for Inputing marks 
         /// </summary>
         public void InputMarks()
         {

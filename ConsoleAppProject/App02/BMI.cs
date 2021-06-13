@@ -37,10 +37,7 @@ namespace ConsoleAppProject.App02
         public double BMIIndex;
 
         /// <summary>
-        /// d
-        /// d
-        /// d
-        /// d
+        /// This is a method to Calculate, output a heading and run through the program options
         /// <summery>
         public void CalculateIndex()
         {
@@ -82,11 +79,18 @@ namespace ConsoleAppProject.App02
             if (typeChoice == "1") return UnitSystems.Imperial;
             else return UnitSystems.Metric;
         }
+
+        /// <summary>
+        /// This is a method to calculate the BMI in Metric
+        /// </summary>
         public void CalculateMetricBMI()
         {
             BMIIndex = kilogram / (metre * metre);
         }
 
+        /// <summary>
+        /// This is a method to calculate the BMI in Imperial
+        /// </summary>
         public void CalculateImperialBMI()
         {
             BMIIndex = pound * 703 / (inch * inch);
@@ -131,9 +135,7 @@ namespace ConsoleAppProject.App02
 
         private void OutputHealthMessage()
         {
-            //Console.Write("Your BMI is > ");
-            //Console.WriteLine(BMIIndex);
-
+            
             if (BMIIndex < UNDERWEIGHT)
             {
                 Console.WriteLine($"BMI is {BMIIndex:0.00}, therefore" +
@@ -168,7 +170,7 @@ namespace ConsoleAppProject.App02
         }
 
         /// <summary>
-        /// Output explination for the BAME 
+        /// Output explination for the BAME community
         /// </summary>
         public void OutputBameMessage()
         {
